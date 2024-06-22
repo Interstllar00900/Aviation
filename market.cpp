@@ -1,17 +1,18 @@
 #include<iostream>
 using namespace std;
 int main(){
-    int n;
-    printf("how many product purchased\n");
-    scanf("%d",&n);
+    int n=0;
+   
     int price[n];
    string products[n];
    
-   for(int i=0;i<n;i++){
-    printf("enter product name\n");
-    scanf("%s",&products[i]);
+   for(int i=0;i<100;i++){
     printf("enter product price\n");
     scanf("%d",&price[i]);
+    if(price[i]==-1){break;}
+    printf("enter product name\n");
+    scanf("%s",&products[i]);
+    n++;
    }
    printf("bill\n");
    for(int i=0;i<n;i++){
