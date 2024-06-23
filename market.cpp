@@ -5,7 +5,7 @@ int main(){
    
     int price[n];
    string products[n];
-   
+   printf("enter product name and prices. press -1 to exit\n");
    for(int i=0;i<100;i++){
     printf("enter %d th product price\n",i+1);
     scanf("%d",&price[i]);
