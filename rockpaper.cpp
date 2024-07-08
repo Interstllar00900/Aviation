@@ -10,6 +10,7 @@ int main(){
    printf("you have total 5 chances\n");
    printf("0 for rock\n");
    printf("1 for paper\n");
+   
    printf("2 for scissor\n");
    int x=0;
    int y=0;

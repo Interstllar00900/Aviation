@@ -1,29 +1,96 @@
-#include<stdio.h>
-int main(){
-   int x,y,z;
-   x=0;
-   y=0;
-   
-   int vote;
-   int number;
-   printf("enter how many people will vote\n");
-   scanf("%d",&number);
-   printf("enter 1 to vote trump\n");
-   printf("enter 2 to vote biden\n");
-   for(int i=1;i<=number;i++){
-   printf("%d person will vote\n",i);
-   scanf("%d",&vote);
-   if(vote==1){
-    x++;
-   }
-   if(vote==2){
-    y++;
-   }
-   }
-   printf("election results are:\n");
-   printf("Trump votes: %d\n",x);
-   printf("Biden votes: %d\n",y);
-   if(x>y){printf("Trump Wins!\n");}
-   else{printf("Biden Wins!\n");}
+#include<iostream>
+using namespace std;
+
+class candid {
+public:
+    int vote = 0;
+    string name;
+};
+
+int main() {
+    int n;
+    cout << "How many candidates will contest?\n";
+    cin >> n;
+    
+    candid can[n]; // Creating an array of candidates
+    
+    // Input candidate names
+    for (int i = 0; i < n; i++) {
+        cout << "Enter name for candidate " << i + 1 << ": ";
+        cin >> can[i].name; // Using cin to read candidate names
+    }
+    
+    int voter;
+    cout << "Enter the number of voters: ";
+    cin >> voter; // Input for number of voters
+    
+    string x;
+    for (int i = 0; i < voter; i++) {
+        cout << "Voter " << i + 1 << " will vote. Enter candidate name: ";
+        cin >> x;
+        
+        // Searching for the candidate and incrementing vote count
+        for (int j = 0; j < n; j++) {
+            if (x == can[j].name) {
+                can[j].vote++;
+                break; // Found the candidate, so break out of the loop
+            }
+        }
+    }
+    
+    // Outputting results
+    cout << "Results:\n";
+    for (int i = 0; i < n; i++) {
+        cout << can[i].name << " got " << can[i].vote << " votes.\n";
+    }
+    
+    return 0;
+}
+#include<iostream>
+using namespace std;
+
+class candid {
+public:
+    int vote = 0;
+    string name;
+};
+
+int main() {
+    int n;
+    cout << "How many candidates will contest?\n";
+    cin >> n;
+    
+    candid can[n]; // Creating an array of candidates
+    
+    // Input candidate names
+    for (int i = 0; i < n; i++) {
+        cout << "Enter name for candidate " << i + 1 << ": ";
+        cin >> can[i].name; // Using cin to read candidate names
+    }
+    
+    int voter;
+    cout << "Enter the number of voters: ";
+    cin >> voter; // Input for number of voters
+    
+    string x;
+    for (int i = 0; i < voter; i++) {
+        cout << "Voter " << i + 1 << " will vote. Enter candidate name: ";
+        cin >> x;
+        
+        // Searching for the candidate and incrementing vote count
+        for (int j = 0; j < n; j++) {
+            if (x == can[j].name) {
+                can[j].vote++;
+                break; // Found the candidate, so break out of the loop
+            }
+        }
+    }
+    
+    // Outputting results
+    cout << "Results:\n";
+    for (int i = 0; i < n; i++) {
+        cout << can[i].name << " got " << can[i].vote << " votes.\n";
+    }
+    
     return 0;
 }
