@@ -5,6 +5,7 @@ class person{
     string name;
     string id;
     void input(){
+        
         cout<<"enter name"<<endl;
         cin>>name;
         cout<<"enter id"<<endl;
@@ -12,17 +13,20 @@ class person{
         
     }
     void display(){
-        cout<<"details"<<endl;
+        cout<<"-------------------------"<<endl;
         cout<<"name: "<<name<<endl;
         cout<<"id: "<<id<<endl;
+        cout<<"-------------------------"<<endl;
     }
    
 };
  int sel(){
         int x;
+        cout<<"============================"<<endl;
         cout<<"press 1 for registration"<<endl;
         cout<<"press 2 for display"<<endl;
         cout<<"press 0 for exit"<<endl;
+        cout<<"============================"<<endl;
         cin>>x;
         return x;
     }
@@ -35,12 +39,19 @@ class person{
                 break;
             }
           }
+          if(j==n){
+            cout<<"registration filled"<<endl;
+          }
           
           return j;
     }
     void dis(person per[],int j){
          for(int i=0;i<j;i++){
             per[i].display();
+         }
+         if(j==0){
+            cout<<"registration list empty!!!"<<endl;
+            cout<<"fill in the registration"<<endl;
          }
     }
 int main(){
@@ -53,12 +64,14 @@ static int j=0;
 while(true){
     x= sel();
     if(x==1){
+        cout<<"enter b to exit from registration list"<<endl;
        j=reg(per,n,j);
     }
     if(x==2){
        dis(per,j);
     }
     if(x==0){
+        cout<<"ending programme"<<endl;
         exit(0);
     }
 
